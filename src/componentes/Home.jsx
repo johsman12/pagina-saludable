@@ -21,6 +21,8 @@ function Productos() {
             Selección de frutas naturales ricas en vitaminas y antioxidantes
             ideales para energizar tu día.
           </p>
+         <p>$ 28.000</p>
+        <button className="botonesproductos">Ver mas</button>
         </div>
 
         <div className="producto">

@@ -1,0 +1,54 @@
+.main-footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 40px 20px;
+    font-family: sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo-img {
+    max-width: 150px;
+    height: auto;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Tamaño para los iconos de redes sociales */
+.social-icon-img {
+    width: 30px; 
+    height: 30px;
+    object-fit: contain;
+    border-radius: 5px; /* Por si quieres bordes redondeados */
+}
+
+.footer-credits {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+.developer-tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+/* Tamaño para el mapa de Colombia */
+.colombia-icon-img {
+    width: 25px;
+    height: auto;
+}

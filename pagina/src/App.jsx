@@ -4,14 +4,14 @@ import Home from "./componentes/Home";
 import Productos from "./componentes/Productos";
 import Footer from "./componentes/Footer";
 import Registro from "./componentes/Registro";
-import Login from './componentes/Login';
+import Login from "./componentes/Login";
 
 import "./App.css";
 
 function App() {
   return (
-    <div>
-        <Header />
+    <div className="app-shell">
+      <Header />
       <Botones />
       <Home />
       <Login />

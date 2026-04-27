@@ -1,41 +1,66 @@
-function Productos() {
+import "./Home.css";
+import heroImage from "../assets/hero.png";
+import comidaImage from "../assets/comida.jpg";
+
+const beneficios = [
+  "Planes de alimentación personalizados",
+  "Recetas balanceadas y fáciles de preparar",
+  "Acompañamiento para tus metas de bienestar",
+];
+
+function Home() {
+  const irARegistro = () => {
+    document.getElementById("registro")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const irAProductos = () => {
+    document.getElementById("productos")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="contenedor">
-      <h2 className="titulo">Nuestros Productos Saludables</h2>
+    <main className="home-section" id="inicio">
+      <div className="home-copy">
+        <span className="home-badge">Nutrición simple, rica y cercana</span>
+        <h2>Come mejor sin complicarte la vida.</h2>
+        <p>
+          En Nutrik te ayudamos a cuidar tu salud con opciones prácticas,
+          asesoría y productos pensados para tu día a día.
+        </p>
 
-      <div className="productos">
-
-        <div className="producto">
-          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400" />
-          <h3>Ensalada Fresh</h3>
-          <p>
-            Una deliciosa mezcla de vegetales frescos con proteínas naturales,
-            perfecta para mantener una alimentación balanceada.
-          </p>
+        <div className="home-actions">
+          <button type="button" className="home-primary-btn" onClick={irARegistro}>
+            Empezar ahora
+          </button>
+          <button type="button" className="home-secondary-btn" onClick={irAProductos}>
+            Ver productos
+          </button>
         </div>
 
-        <div className="producto">
-          <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400" />
-          <h3>Mix de Frutas</h3>
-          <p>
-            Selección de frutas naturales ricas en vitaminas y antioxidantes
-            ideales para energizar tu día.
-          </p>
+        <div className="home-benefits">
+          {beneficios.map((beneficio) => (
+            <div key={beneficio} className="benefit-card">
+              <span className="benefit-dot" />
+              <p>{beneficio}</p>
+            </div>
+          ))}
         </div>
-
-        <div className="producto">
-          <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=400" />
-          <h3>Jugo Detox</h3>
-          <p>
-            Bebida refrescante que ayuda a limpiar tu organismo y mejorar tu
-            digestión de forma natural.
-          </p>
-        </div>
-
       </div>
-    </div>
+
+      <div className="home-visual">
+        <div className="home-image-card">
+          <img src={heroImage} alt="Ilustración de alimentación saludable" />
+        </div>
+
+        <div className="home-floating-card">
+          <img src={comidaImage} alt="Comida saludable fresca" />
+          <div>
+            <strong>Menús frescos</strong>
+            <p>Ingredientes reales y porciones equilibradas.</p>
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }
 
-
-export default Productos;
+export default Home;

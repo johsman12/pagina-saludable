@@ -1,93 +1,40 @@
-header{
-  text-align:center;
-  padding:30px 20px;
-  background: linear-gradient(135deg, var(--verde-nutrik), var(--verde-oscuro));
-  color:white;
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 16px 24px;
+  background: rgba(241, 245, 232, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(184, 179, 161, 0.35);
 }
 
-nav{
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  padding:15px;
-  background:white;
-  box-shadow:0 2px 8px rgba(0,0,0,0.1);
+.brand-lockup {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
 }
 
-nav button{
-  padding:10px 20px;
-  border:none;
-  border-radius:8px;
-  background: var(--verde-nutrik);
-  color:white;
-  cursor:pointer;
-  font-weight:bold;
-  transition:0.3s;
+.brand-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--fondo-crema);
+  box-shadow: 0 10px 25px rgba(27, 48, 11, 0.12);
 }
 
-nav button:hover{
-  background: var(--verde-oscuro);
-  transform:scale(1.05);
-}
-
-.contenedor{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  padding:30px 20px;
-}
-
-.titulo{
-  font-size:26px;
-  margin-bottom:20px;
-  text-align:center;
+.brand-lockup h1 {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1;
   color: var(--verde-oscuro);
 }
 
-.productos{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:25px;
-  max-width:1000px;
-}
-
-.producto{
-  background:white;
-  width:220px;
-  padding:15px;
-  border-radius:15px;
-  text-align:center;
-  box-shadow:0 6px 15px rgba(0,0,0,0.1);
-  transition:0.3s;
-}
-
-.producto:hover{
-  transform:translateY(-5px);
-}
-
-.producto img{
-  width:120px;
-  height:120px;
-  object-fit:cover;
-  border-radius:12px;
-  margin-bottom:10px;
-}
-
-.producto h3{
-  margin:8px 0;
-  color: var(--verde-oscuro);
-}
-
-.producto p{
-  color:#555;
-  margin-bottom:10px;
-}
-
-footer{
-  margin-top:40px;
-  text-align:center;
-  padding:15px;
-  background:#1f2937;
-  color:white;
+.brand-lockup p {
+  margin: 4px 0 0;
+  color: var(--gris-carbon);
+  font-weight: 500;
 }

@@ -1,55 +1,51 @@
+import "./Productos.css";
+import heroImage from "../assets/hero.png";
+import comidaImage from "../assets/comida.jpg";
+import logoImage from "../assets/Nutrik.jpg";
+
+const productos = [
+  {
+    nombre: "Bowls Vitales",
+    descripcion: "Combinaciones balanceadas de vegetales, proteína y granos para almuerzos completos.",
+    imagen: comidaImage,
+  },
+  {
+    nombre: "Snacks Nutrik",
+    descripcion: "Opciones ligeras para media mañana o tarde con foco en energía y saciedad.",
+    imagen: heroImage,
+  },
+  {
+    nombre: "Kits Semanales",
+    descripcion: "Selecciones listas para organizar tu semana sin perder sabor ni nutrición.",
+    imagen: logoImage,
+  },
+];
+
 function Productos() {
   return (
-    <div className="contenedor">
-
-     <h2 className="titulo">Todos Nuestros Productos</h2>
-
-      <h2 className="titulo">Nuestros Productos Saludables</h2>
-
-
-      <div className="productos">
-
-        <div className="producto">
-          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400" />
-          <h3>Ensalada Fresh</h3>
-
-          <p>Alimentación balanceada con ingredientes naturales.</p>
-
-          <p>
-            Una deliciosa mezcla de vegetales frescos con proteínas naturales,
-            perfecta para mantener una alimentación balanceada.
-          </p>
-
-        </div>
-
-        <div className="producto">
-          <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400" />
-          <h3>Mix de Frutas</h3>
-
-          <p>Ricas en vitaminas y antioxidantes.</p>
-
-          <p>
-            Selección de frutas naturales ricas en vitaminas y antioxidantes
-            ideales para energizar tu día.
-          </p>
-
-        </div>
-
-        <div className="producto">
-          <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=400" />
-          <h3>Jugo Detox</h3>
-
-          <p>Refrescante y saludable para tu cuerpo.</p>
-
-          <p>
-            Bebida refrescante que ayuda a limpiar tu organismo y mejorar tu
-            digestión de forma natural.
-          </p>
-
-        </div>
-
+    <section className="productos-section" id="productos">
+      <div className="productos-heading">
+        <span>Nuestros destacados</span>
+        <h2>Productos pensados para una rutina saludable</h2>
+        <p>
+          Cada opción fue diseñada para ayudarte a comer mejor sin dejar de
+          disfrutar.
+        </p>
       </div>
-    </div>
+
+      <div className="productos-grid">
+        {productos.map((producto) => (
+          <article key={producto.nombre} className="producto-card">
+            <img src={producto.imagen} alt={producto.nombre} className="producto-image" />
+            <div className="producto-content">
+              <h3>{producto.nombre}</h3>
+              <p>{producto.descripcion}</p>
+              <button type="button">Comprar ahora</button>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
 

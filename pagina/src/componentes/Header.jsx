@@ -1,10 +1,16 @@
 import "./Header.css";
+import logo from "../assets/Nutrik.jpg";
 
 function Header() {
   return (
-    <header>
-      <h1>Tienda de Comida Saludable</h1>
-      <p>TU SALUD EMPIEZA AQUI</p>
+    <header className="site-header">
+      <div className="brand-lockup">
+        <img src={logo} alt="Logo Nutrik" className="brand-logo" />
+        <div>
+          <h1>Nutrik</h1>
+          <p>Tu salud empieza aquí</p>
+        </div>
+      </div>
     </header>
   );
 }

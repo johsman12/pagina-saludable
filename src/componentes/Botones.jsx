@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 
 function Botones() {
@@ -18,6 +19,7 @@ function Botones() {
         <button className="btn-nav">Iniciar Sesión</button>
       </Link>
     </div>
+
   );
 }
 

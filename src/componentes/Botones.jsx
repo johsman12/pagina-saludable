@@ -1,25 +1,22 @@
-
 import { Link } from 'react-router-dom';
+import './Botones.css'; // Asegúrate de que este archivo exista e incluya los estilos
 
 function Botones() {
   return (
-    <div className="botones-container">
-      {/* Botón de Inicio: lleva a la raíz / */}
-      <Link to="/">
+    <nav className="botones-container">
+      {/* Usamos un estilo simple para evitar que el Link subraye el texto */}
+      <Link to="/" style={{ textDecoration: 'none' }}>
         <button className="btn-nav">Inicio</button>
       </Link>
 
-      {/* Botón de Registrarse: lleva a tu página /registro */}
-      <Link to="/registro">
+      <Link to="/registro" style={{ textDecoration: 'none' }}>
         <button className="btn-nav">Registrarse</button>
       </Link>
 
-      {/* Botón de Iniciar Sesión: lleva a tu página /login */}
-      <Link to="/login">
+      <Link to="/login" style={{ textDecoration: 'none' }}>
         <button className="btn-nav">Iniciar Sesión</button>
       </Link>
-    </div>
-
+    </nav>
   );
 }
 

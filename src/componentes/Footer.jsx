@@ -1,17 +1,10 @@
-// 1. Importas el componente (asegúrate de que la ruta sea correcta)
-import Footer from './componentes/Footer';
-
-function Home() {
+function Footer() {
   return (
-    <div className="home-container">
-      <Header />
-      <main>
-        {/* Todo el contenido de la página */}
-        <h1>Bienvenido a Nutrik</h1>
-      </main>
-
-      {/* 2. Lo colocas al final, justo antes de cerrar el div principal */}
-      <Footer />
-    </div>
+    <footer className="footer-aesthetic">
+      {/* Aquí va todo el código pro que hizo Johsman */}
+      <p>© 2026 Nutrik - Todos los derechos reservados</p>
+    </footer>
   );
 }
+
+export default Footer;

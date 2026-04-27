@@ -2,19 +2,21 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <footer className="site-footer" id="footer">
+    <footer className="site-footer" id="contacto">
       <div>
         <h3>Nutrik</h3>
-        <p>Hábitos saludables, productos frescos y una experiencia más humana.</p>
+        <p>Formulario digital para comentarios, quejas y sugerencias.</p>
       </div>
 
       <div className="footer-links">
         <a href="#inicio">Inicio</a>
-        <a href="#productos">Productos</a>
-        <a href="#registro">Registro</a>
+        <a href="#formulario">Formulario</a>
+        <a href="mailto:davidalexanderchangosantacruz@gmail.com">
+          davidalexanderchangosantacruz@gmail.com
+        </a>
       </div>
 
-      <p className="footer-copy">© 2026 Nutrik. Alimentación saludable para todos.</p>
+      <p className="footer-copy">© 2026 Nutrik. Canal de atencion al cliente.</p>
     </footer>
   );
 }

@@ -3,7 +3,7 @@
   top: 0;
   z-index: 20;
   padding: 16px 24px;
-  background: rgba(241, 245, 232, 0.95);
+  background: rgba(241, 245, 232, 0.96);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(184, 179, 161, 0.35);
 }
@@ -13,7 +13,6 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 14px;
 }
 
@@ -37,4 +36,11 @@
   margin: 4px 0 0;
   color: var(--gris-carbon);
   font-weight: 500;
+}
+
+@media (max-width: 720px) {
+  .brand-lockup {
+    justify-content: center;
+    text-align: center;
+  }
 }

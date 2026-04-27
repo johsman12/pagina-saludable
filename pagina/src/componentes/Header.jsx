@@ -8,7 +8,7 @@ function Header() {
         <img src={logo} alt="Logo Nutrik" className="brand-logo" />
         <div>
           <h1>Nutrik</h1>
-          <p>Formulario de comentarios, quejas y sugerencias</p>
+          <p>Tu salud empieza aquí</p>
         </div>
       </div>
     </header>

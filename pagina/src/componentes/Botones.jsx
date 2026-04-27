@@ -2,8 +2,9 @@ import "./Botones.css";
 
 const enlaces = [
   { etiqueta: "Inicio", destino: "inicio" },
-  { etiqueta: "Formulario", destino: "formulario" },
-  { etiqueta: "Contacto", destino: "contacto" },
+  { etiqueta: "Productos", destino: "productos" },
+  { etiqueta: "Iniciar sesión", destino: "login" },
+  { etiqueta: "Registro", destino: "registro" },
 ];
 
 function Botones() {
@@ -12,7 +13,7 @@ function Botones() {
   };
 
   return (
-    <nav className="main-nav" aria-label="Navegacion principal">
+    <nav className="main-nav" aria-label="Navegación principal">
       {enlaces.map((enlace) => (
         <button
           key={enlace.destino}

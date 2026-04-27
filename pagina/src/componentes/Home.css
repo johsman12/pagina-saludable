@@ -1,248 +1,168 @@
-.home-page {
+.home-section {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 32px 24px 72px;
-}
-
-.hero-section,
-.form-layout {
+  padding: 48px 24px 72px;
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-  gap: 28px;
-  align-items: start;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 36px;
+  align-items: center;
 }
 
-.hero-section {
-  padding: 24px 0 56px;
-}
-
-.hero-copy {
+.home-copy {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
 }
 
-.hero-badge,
-.section-label {
+.home-badge {
   display: inline-flex;
   align-self: flex-start;
   padding: 8px 14px;
   border-radius: 999px;
-  background: rgba(145, 193, 62, 0.14);
+  background: rgba(145, 193, 62, 0.15);
   color: var(--verde-oscuro);
-  font-size: 0.9rem;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
-.hero-copy h2,
-.form-intro h3 {
+.home-copy h2 {
+  font-size: clamp(2.5rem, 6vw, 4.4rem);
+  line-height: 0.95;
   color: var(--verde-oscuro);
-  line-height: 1;
 }
 
-.hero-copy h2 {
-  font-size: clamp(2.6rem, 6vw, 4.8rem);
-  max-width: 10ch;
-}
-
-.hero-copy p,
-.form-intro p,
-.hero-panel-copy p,
-.success-box p,
-.error-box p,
-.value-card p,
-.info-box li {
+.home-copy p {
+  max-width: 600px;
+  font-size: 1.08rem;
   color: var(--gris-carbon);
 }
 
-.hero-button,
-.submit-button {
-  width: fit-content;
-  border: none;
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.home-primary-btn,
+.home-secondary-btn {
   border-radius: 999px;
-  padding: 14px 22px;
-  background: var(--verde-nutrik);
-  color: #fff;
-  font-size: 1rem;
+  padding: 14px 24px;
   font-weight: 700;
+  font-size: 1rem;
   cursor: pointer;
-  box-shadow: 0 12px 24px rgba(145, 193, 62, 0.25);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-.hero-button:hover,
-.submit-button:hover {
-  background: var(--verde-oscuro);
+.home-primary-btn {
+  border: none;
+  background: var(--verde-nutrik);
+  color: #fff;
+  box-shadow: 0 14px 28px rgba(145, 193, 62, 0.25);
+}
+
+.home-secondary-btn {
+  border: 1px solid rgba(27, 48, 11, 0.18);
+  background: #fff;
+  color: var(--verde-oscuro);
+}
+
+.home-primary-btn:hover,
+.home-secondary-btn:hover {
   transform: translateY(-2px);
 }
 
-.submit-button:disabled {
-  opacity: 0.8;
-  cursor: wait;
-}
-
-.value-list {
+.home-benefits {
   display: grid;
   gap: 12px;
-  margin-top: 8px;
 }
 
-.value-card {
+.benefit-card {
   display: flex;
+  align-items: center;
   gap: 12px;
-  align-items: flex-start;
-  padding: 16px 18px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(108, 142, 100, 0.16);
-  border-radius: 20px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.66);
+  border: 1px solid rgba(108, 142, 100, 0.15);
 }
 
-.value-dot {
+.benefit-dot {
   width: 12px;
   height: 12px;
-  margin-top: 7px;
   border-radius: 50%;
   background: var(--verde-nutrik);
   flex-shrink: 0;
 }
 
-.hero-panel,
-.form-card,
-.info-box {
-  background: #fff;
-  border: 1px solid rgba(184, 179, 161, 0.3);
-  border-radius: 30px;
-  box-shadow: 0 24px 50px rgba(27, 48, 11, 0.1);
+.benefit-card p {
+  font-size: 0.98rem;
 }
 
-.hero-panel {
+.home-visual {
+  position: relative;
+  min-height: 500px;
+}
+
+.home-image-card {
   overflow: hidden;
+  border-radius: 36px;
+  background: linear-gradient(145deg, rgba(145, 193, 62, 0.35), rgba(108, 142, 100, 0.16));
+  box-shadow: 0 24px 60px rgba(27, 48, 11, 0.12);
 }
 
-.hero-image {
+.home-image-card img {
   width: 100%;
-  height: 380px;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.home-floating-card {
+  position: absolute;
+  right: -12px;
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: min(320px, 100%);
+  padding: 14px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 40px rgba(27, 48, 11, 0.16);
+}
+
+.home-floating-card img {
+  width: 84px;
+  height: 84px;
+  border-radius: 18px;
   object-fit: cover;
 }
 
-.hero-panel-copy {
-  padding: 22px;
-}
-
-.hero-panel-copy strong,
-.info-box h4,
-.success-box h4,
-.error-box h4 {
+.home-floating-card strong {
+  display: block;
+  margin-bottom: 4px;
   color: var(--verde-oscuro);
 }
 
-.form-layout {
-  padding-top: 8px;
+.home-floating-card p {
+  margin: 0;
+  font-size: 0.92rem;
 }
 
-.form-intro {
-  padding: 8px 0;
-}
-
-.form-intro h3 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin: 16px 0 12px;
-}
-
-.info-box {
-  margin-top: 24px;
-  padding: 22px;
-}
-
-.info-box ul {
-  margin: 12px 0 0 18px;
-}
-
-.form-card {
-  padding: 28px;
-}
-
-.feedback-form {
-  display: grid;
-  gap: 18px;
-}
-
-.field-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.field-group {
-  display: grid;
-  gap: 8px;
-}
-
-.field-group span {
-  color: var(--verde-oscuro);
-  font-weight: 700;
-}
-
-.field-group input,
-.field-group select,
-.field-group textarea {
-  width: 100%;
-  border: 1px solid rgba(108, 142, 100, 0.3);
-  border-radius: 16px;
-  padding: 14px 16px;
-  background: #fdfef9;
-  color: var(--gris-carbon);
-  outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.field-group input:focus,
-.field-group select:focus,
-.field-group textarea:focus {
-  border-color: var(--verde-nutrik);
-  box-shadow: 0 0 0 4px rgba(145, 193, 62, 0.16);
-}
-
-.field-group textarea {
-  resize: vertical;
-  min-height: 150px;
-}
-
-.submit-button {
-  justify-self: start;
-}
-
-.success-box,
-.error-box {
-  margin-top: 22px;
-  padding: 18px;
-  border-radius: 20px;
-}
-
-.success-box {
-  background: rgba(145, 193, 62, 0.12);
-  border: 1px solid rgba(145, 193, 62, 0.28);
-}
-
-.error-box {
-  background: rgba(181, 52, 52, 0.08);
-  border: 1px solid rgba(181, 52, 52, 0.22);
-}
-
-@media (max-width: 920px) {
-  .hero-section,
-  .form-layout,
-  .field-grid {
+@media (max-width: 900px) {
+  .home-section {
     grid-template-columns: 1fr;
   }
 
-  .hero-copy h2 {
-    max-width: none;
+  .home-visual {
+    min-height: auto;
   }
 
-  .hero-image {
-    height: 300px;
+  .home-floating-card {
+    position: static;
+    margin-top: 16px;
+  }
+
+  .home-image-card img {
+    height: 360px;
   }
 }

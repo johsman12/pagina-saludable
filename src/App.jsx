@@ -1,25 +1,19 @@
-import Header from "./componentes/Header";
-import Botones from "./componentes/Botones";
-import Home from "./componentes/Home";
-import Productos from "./componentes/Productos";
-import Footer from "./componentes/Footer";
-import Registro from "./componentes/Registro";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './componentes/Home';
 import Login from './componentes/Login';
-
-import "./App.css";
+import Botones from './componentes/Botones'; // Importas tu barra de navegación
 
 function App() {
   return (
-    <div>
-        <Header />
-      <Botones />
-      <Home />
-      <Login />
-      <Registro />
-      <Productos />
-      <Footer />
-    </div>
+    <Router>
+      {/* Si quieres que los botones aparezcan en TODAS las páginas, ponlos fuera de Routes */}
+      <Botones /> 
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        {/* Aquí irías agregando las demás: comprar, registro, contacto */}
+      </Routes>
+    </Router>
   );
 }
-
-export default App;

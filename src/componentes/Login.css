@@ -1,221 +1,221 @@
 /* ==========================================
-   RESETEO GENERAL DE ESTILOS
+   PASO 1: LIMPIEZA DE LA PÁGINA 
+   (Para que todo empiece desde cero)
    ========================================== */
 * {
-    /* Elimina márgenes y rellenos por defecto del navegador */
+    /* Quita el espacio por fuera de las cajas */
     margin: 0;
+    /* Quita el espacio por dentro de las cajas */
     padding: 0;
-    /* Incluye el padding y el borde dentro del ancho/alto total del elemento */
+    /* Hace que el tamaño de las cajas no cambie aunque tengan bordes */
     box-sizing: border-box; 
 }
 
-/* ==========================================
-   CONTENEDOR PRINCIPAL (PÁGINA COMPLETA)
-   ========================================== */
 .login-page {
-    /* Usa Flexbox para alinear el lado izquierdo y el derecho en fila */
+    /* Pone las dos partes de la pantalla una al lado de la otra */
     display: flex;
+    /* Las organiza en una fila (izquierda y derecha) */
     flex-direction: row;
-    /* Ocupa el 100% del ancho y alto de la ventana del navegador */
+    /* Hace que mida todo el ancho de la pantalla */
     width: 100vw;
+    /* Hace que mida todo el alto de la pantalla */
     height: 100vh;
-    /* Asegura que no haya espacios externos ni internos */
-    margin: 0;
-    padding: 0;
-    /* Propiedades para la imagen de fondo (aunque se use en los hijos) */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    /* Evita que aparezcan barras de desplazamiento */
+    /* Esconde cualquier cosa que se salga para que no salgan barras de flecha */
     overflow: hidden;
 }
 
 /* ==========================================
-   VARIABLES GLOBALES (ROOT)
+   PASO 2: GUARDAR LA IMAGEN DE FONDO 
    ========================================== */
 :root {
-  /* Define la ruta de la imagen de fondo para reutilizarla fácilmente */
+  /* Guarda la foto de comida con un nombre corto para usarla fácil */
   --fondo-comida: url('../assets/comida.jpg'); 
 }
 
 /* ==========================================
-   SECCIÓN IZQUIERDA (CONTENIDO INFORMATIVO)
+   PASO 3: PARTE IZQUIERDA - EL LOGO 
    ========================================== */
 .info-content {
-    /* Toma una parte equitativa del espacio disponible (50% si el otro es flex:1) */
+    /* Le dice a esta parte que use la mitad del espacio */
     flex: 1;
-    /* Degradado lineal usando la paleta unificada */
+    /* Pone un fondo de dos colores verdes que se mezclan */
     background: linear-gradient(135deg, #C8E6C9, var(--verde-oscuro)); 
+    /* Pone las letras de color blanco */
     color: white;
+    /* Deja un espacio de protección en los bordes */
     padding: 60px;
-    /* Alinea el logo y el texto al centro de esta columna */
+    /* Usa un sistema para centrar cosas */
     display: flex;
+    /* Pone una cosa debajo de la otra */
     flex-direction: column;
+    /* Centra todo de izquierda a derecha */
     align-items: center;
+    /* Centra todo de arriba a abajo */
     justify-content: center;
-    /* Espacio entre elementos hijos (actualmente en 0) */
-    gap: 0px; 
 }
 
 .login-logo {
-    /* 1. Definimos el tamaño del círculo */
+    /* El ancho del círculo */
     width: 400px;
+    /* El alto del círculo */
     height: 400px;
-    
-    /* 2. ¡La magia del círculo! Esto redondea los bordes al 50% */
+    /* Redondea las esquinas hasta que sea un círculo perfecto */
     border-radius: 50%;
-    
-    /* 3. Un borde muy fino y elegante de color blanquecino sutil */
+    /* Le pone una línea muy finita alrededor */
     border: 1px solid rgba(255, 255, 255, 0.2);
-    
-    /* 4. Le damos un fondo blanco limpio para que el logo resalte */
+    /* Color de fondo del círculo (blanco suave) */
     background-color: #e8fadcf5;
-    
-    /* 5. Aseguramos que el logo interno esté bien centrado en el círculo */
+    /* Sirve para centrar la imagen del logo adentro */
     display: flex;
+    /* Centra el logo horizontalmente */
     justify-content: center;
+    /* Centra el logo verticalmente */
     align-items: center;
-    
-    /* 6. Espaciado interno para que el logo no toque el borde */
+    /* Espacio para que el logo no toque los bordes del círculo */
     padding: 20px;
-    
-    /* 7. Truco para que el logo no se deforme dentro del círculo */
+    /* Hace que la imagen encaje bien sin deformarse */
     object-fit: contain;
-    
-    /* 8. Un pequeño efecto de sombra para darle profundidad (calidad) */
+    /* Le pone una sombrita abajo para que parezca que flota */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    /* Al pasar el mouse, el brillo se intensifica */
+    /* Le pone un brillo de luz verde alrededor */
     filter: drop-shadow(0 0 25px rgba(145, 201, 72, 1));
+    /* Hace que se mueva de arriba a abajo solito */
     animation: flotar 3s ease-in-out infinite;
-  
 }
 
-/* Título principal de la sección informativa */
 .info-content h1 {
+    /* Tamaño de la letra del título */
     font-size: 2.5rem;
+    /* Espacio pequeño alrededor del texto */
     margin: 5px; 
-    /* Grosor de fuente extra negrita */
+    /* Hace la letra muy gordita y fuerte */
     font-weight: 1000;
 }
 
 /* ==========================================
-   SECCIÓN DERECHA (LADO DEL FORMULARIO)
+   PASO 4: PARTE DERECHA - EL FORMULARIO 
    ========================================== */
 .login-form-side {
-    /* Ocupa la otra mitad de la pantalla */
+    /* Usa la otra mitad de la pantalla */
     flex: 1; 
+    /* Sirve para centrar el cuadro de escribir */
     display: flex;
+    /* Centra el cuadro horizontalmente */
     justify-content: center;
+    /* Centra el cuadro verticalmente */
     align-items: center;
-    
-    /* CAPA DE FONDO COMPUESTA:
-       1. Aplica un degradado semi-transparente arriba para "oscurecer" o matizar.
-       2. Coloca la imagen de comida debajo del degradado. */
+    /* Pone un color encima de la foto de comida para que se vea mejor */
     background: linear-gradient(rgba(241, 238, 238, 0.585), rgba(220, 255, 220, 0.526)), 
                 var(--fondo-comida);
+    /* Hace que la foto cubra todo el espacio sin repetirse */
     background-size: cover;    
+    /* Centra la foto de fondo */
     background-position: center; 
-    background-repeat: no-repeat;
-    
-    /* Color de texto por defecto para esta sección */
-    color: white; 
 }
 
 .form-content {
-    /* ... tus otras propiedades (flex, margin, etc.) ... */
-    
-    /* 1. ¡MÁS ESPACIO! Aumentamos el padding para que el contenido "respire" */
+    /* Espacio adentro del cuadro para que nada toque los bordes */
     padding: 50px; 
-    
-    /* 2. Hacemos el cristal más claro y brillante */
-    background: rgba(255, 255, 255, 0.15); /* Más blanco, menos gris */
-    
-    /* 3. Aumentamos el desenfoque para un efecto más suave y premium */
+    /* Fondo blanco pero un poco transparente */
+    background: rgba(255, 255, 255, 0.15); 
+    /* Hace el efecto de vidrio empañado o borroso */
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px); /* Para Mac/Safari */
-    
-    /* 4. Un borde más sutil para el cuadro */
+    /* Lo mismo de arriba pero para que funcione en Mac */
+    -webkit-backdrop-filter: blur(20px); 
+    /* Borde delgadito del cuadro */
     border: 1px solid rgba(255, 255, 255, 0.2);
-    
-    /* 5. Sombras más suaves y profundas para que flote mejor */
+    /* Sombra grande para que el cuadro resalte de la foto */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Color del título "Login" o "Bienvenido" dentro del formulario */
-.login-form-side h2 {
-    /* Usa la variable de color de título consistente */
-    color: var(--verde-oscuro) !important;
-}
-
 /* ==========================================
-   DISEÑO DE LOS CAMPOS DE ENTRADA (INPUTS)
+   PASO 5: LAS CAJITAS DE TEXTO 
    ========================================== */
 .input-field {
-    /* Espaciado inferior entre cada bloque de input */
+    /* Espacio debajo de cada caja para que no estén pegadas */
     margin-bottom: 20px;
 }
 
 .input-field input {
+    /* Que la caja mida todo el ancho del cuadro */
     width: 100%;
+    /* Tamaño del espacio para escribir adentro */
     padding: 14px;
-    /* Estética de borde gris suave y puntas redondeadas */
+    /* Borde color gris clarito */
     border: 1px solid #e0e0e0; 
+    /* Redondea un poquito las puntas de la caja */
     border-radius: 10px;
-    /* Fondo casi blanco */
-    background-color: #f9f9f9;
+    /* Tamaño de la letra que escribes */
     font-size: 1rem;
-    /* Quita el borde resaltado por defecto del navegador */
-    outline: none;
-    /* Animación suave para cuando el usuario hace clic (focus) */
+    /* Hace que los cambios de color sean suaves al hacer clic */
     transition: all 0.3s ease;
 }
 
-/* Estilo cuando el usuario hace clic dentro del input */
 .input-field input:focus {
-    /* Cambia el borde al verde de la marca */
+    /* Cambia el color del borde a verde cuando haces clic */
     border-color: #637537;
-    background-color: #fff;
-    /* Añade una sombra tipo "halo" alrededor del input */
+    /* Le pone un brillito suave alrededor al escribir */
     box-shadow: 0 0 0 4px rgba(99, 117, 55, 0.1);
 }
 
 /* ==========================================
-   BOTONES DE ACCIÓN
+   PASO 6: LOS BOTONES 
    ========================================== */
-
-/* Botón de Iniciar Sesión (Verde Oscuro) */
 .btn-login {
+    /* El botón mide todo el ancho disponible */
     width: 100%;
+    /* Espacio adentro del botón */
     padding: 12px;
+    /* Color de fondo verde oscuro */
     background-color: #15592e; 
+    /* Color de la letra blanca */
     color: white;
+    /* Quita el borde que traen los botones por defecto */
     border: none;
+    /* Redondea las puntas del botón */
     border-radius: 8px;
-    cursor: pointer; /* Cambia el cursor a "manito" */
+    /* Hace que salga la manito cuando pasas el mouse */
+    cursor: pointer; 
+    /* Espacio arriba del botón */
     margin-top: 10px;
 }
 
-/* Botón de Google (Color tenue con borde) */
 .btn-google {
+    /* El botón mide todo el ancho */
     width: 100%;
+    /* Espacio adentro del botón */
     padding: 12px;
+    /* Fondo verde muy clarito y transparente */
     background-color: rgba(152, 173, 145, 0.678); 
+    /* Borde verde militar */
     border: 1px solid #334829;
+    /* Redondea las puntas */
     border-radius: 8px;
+    /* Espacio arriba */
     margin-top: 10px;
-    /* Alinea el icono y el texto de Google al centro */
+    /* Ayuda a centrar el icono de Google y el texto */
     display: flex;
+    /* Centra el contenido horizontalmente */
     justify-content: center;
+    /* Centra el contenido verticalmente */
     align-items: center;
+    /* Hace que salga la manito con el mouse */
     cursor: pointer;
 }
 
-/* El título principal "Bienvenido De Nuevo" */
+/* ==========================================
+   PASO 7: TEXTOS Y LINKS FINALES 
+   ========================================== */
 .form-content h2 {
-    color: #fff; /* Blanco puro */
-    font-size: 2.2rem; /* Un poco más grande */
-    font-weight: 700; /* Más grueso */
-    margin-bottom: 30px; /* Más espacio abajo */
+    /* Color blanco para el título de Login */
+    color: #fff;
+    /* Tamaño de la letra */
+    font-size: 2.2rem;
+    /* Hace la letra gruesa */
+    font-weight: 700;
+    /* Espacio debajo del título */
+    margin-bottom: 30px;
+    /* Centra el texto */
     text-align: center;
 }
 
@@ -229,17 +229,25 @@
 
 /* Esto selecciona el texto informativo al final del formulario */
 .form-content p {
-    color: #000000 !important; /* Negro puro para máxima visibilidad */
+    /* Obliga a que el texto sea de color negro */
+    color: #000000 !important; 
+    /* Espacio arriba del texto */
     margin-top: 10px;
+    /* Centra el texto */
     text-align: center;
+    /* Tamaño de la letra */
     font-size: 1rem;
     font-weight: 500; /* Un poco de grosor para que no sea tan delgado */
 }
 
 /* Y esto asegura que el enlace que va pegado también se vea */
 .form-content p a {
-    color: #15592e !important; /* Tu verde oscuro para que se note que es un link */
-    font-weight: 500; /* Más negrita para que resalte del resto */
+    /* Color verde oscuro para el link de registrarse */
+    color: #15592e; 
+    /* Letra un poquito más gruesa */
+    font-weight: 500;
+    /* Quita la línea de subrayado del link */
     text-decoration: none;
-    margin-left: 10px; /* Espacio entre el texto y el enlace */
+    /* Espacio a la izquierda para despegarlo del texto */
+    margin-left: 10px;
 }

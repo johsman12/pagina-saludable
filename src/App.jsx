@@ -5,7 +5,7 @@ import Header from "./componentes/Header";
 import Botones from "./componentes/Botones";
 import Home from "./componentes/Home";
 import Productos from "./componentes/Productos";
-import Footer from "./componentes/Footer";
+// BORRÉ LA IMPORTACIÓN DEL FOOTER DE AQUÍ
 import Registro from "./componentes/Registro";
 import Login from './componentes/Login';
 
@@ -18,7 +18,7 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        <Botones /> {/* Si los botones son parte de la navegación general */}
+        <Botones />
         
         <Routes>
           {/* Esta es la página principal (la de Gilmer) */}
@@ -32,7 +32,7 @@ function App() {
           <Route path="/productos" element={<Productos />} />
         </Routes>
 
-        <Footer />
+        {/* BORRÉ EL <Footer /> DE AQUÍ */}
       </div>
     </Router>
 

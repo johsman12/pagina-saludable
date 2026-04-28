@@ -1,168 +1,103 @@
-/* ==========================================
-   PASO 1: LA CAJA GRANDE (EL FONDO)
-   ========================================== */
 .main-container {
-  /* Usa Flexbox para apilar las cosas como una torre (una sobre otra) */
   display: flex;
   flex-direction: column;
-  /* Que ocupe, como mínimo, todo el alto de la pantalla */
   min-height: 100vh;
-  /* Un fondo que cambia de un verde grisáceo a uno más clarito suavemente */
   background: linear-gradient(180deg, #e9ece8 0%, #dce8d8 100%);
-  /* El tipo de letra que usará toda la página */
   font-family: Arial, sans-serif;
 }
 
-/* ==========================================
-   PASO 2: LA CABECERA (LOGO Y TÍTULO)
-   ========================================== */
+/* Cabecera horizontal */
 .header-registro {
-  /* Alinea el logo y el texto en la misma fila */
   display: flex;
-  /* Centra el logo y el texto horizontalmente */
   align-items: center;
-  /* Centra el contenido en el medio de la pantalla */
   justify-content: center;
-  /* Deja un espacio de 30 píxeles entre el logo y el texto */
   gap: 30px;
-  /* Espacio de separación por dentro para que no toque los bordes */
   padding: 40px;
-  /* Color de la letra (un verde muy, muy oscuro) */
-  color: #2d3e26;
+  color: #2d3e26; /* Un verde muy oscuro casi negro */
 }
 
 .logo-circle {
-  /* Color de fondo del círculo del logo (verde casi blanco) */
   background-color: #f0f7ed;
-  /* Ancho del círculo */
   width: 130px;
-  /* Alto del círculo */
   height: 130px;
-  /* Convierte el cuadro en un círculo perfecto */
   border-radius: 50%;
-  /* Centra la imagen del logo dentro del círculo */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Le pone un resplandor blanco alrededor para que brille */
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
 .logo-img {
-  /* Tamaño de la imagen del logo dentro del círculo */
   width: 90px;
 }
 
 .header-text h1 {
-  /* Tamaño de la letra del título principal */
   font-size: 2.5rem;
-  /* Quita cualquier espacio extra que Git o el navegador pongan por defecto */
   margin: 0;
 }
 
-/* ==========================================
-   PASO 3: LA TARJETA BLANCA (EL FORMULARIO)
-   ========================================== */
+/* Tarjeta Blanca */
 .form-container {
-  /* Centra la tarjeta en la pantalla */
   display: flex;
   justify-content: center;
-  /* Espacio abajo para que la tarjeta no pegue con el final de la página */
   padding-bottom: 50px;
 }
 
 .card-registro {
-  /* Color de fondo de la tarjeta */
   background: white;
-  /* Espacio interno para que el texto no toque las paredes de la tarjeta */
   padding: 30px;
-  /* Redondea las esquinas de la tarjeta */
   border-radius: 15px;
-  /* Que intente ocupar todo el ancho disponible... */
   width: 100%;
-  /* ...pero que no crezca más de 550 píxeles para que no se vea gigante */
   max-width: 550px;
-  /* Le pone una sombra negra suave para que parezca que la tarjeta flota */
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
 .card-title {
-  /* Color verde oliva para el título de la tarjeta */
   color: #6b8e5a;
-  /* Centra el texto */
   text-align: center;
-  /* Espacio debajo del título */
   margin-bottom: 20px;
 }
 
-/* ==========================================
-   PASO 4: ETIQUETAS Y CAMPOS DE TEXTO
-   ========================================== */
+/* Etiquetas de los campos */
 .field-label {
-  /* Hace que la etiqueta ocupe su propia línea (arriba del input) */
   display: block;
-  /* Hace la letra más gruesa */
   font-weight: bold;
-  /* Espacio pequeño entre el nombre y la cajita de escribir */
   margin-bottom: 5px;
-  /* Color gris muy oscuro para que se lea bien */
   color: #333;
 }
 
 .input-row {
-  /* Pone dos cajitas de texto una al lado de la otra */
   display: flex;
-  /* Espacio de separación entre las dos cajitas */
   gap: 15px;
 }
 
 .input-group {
-  /* Hace que la cajita crezca para ocupar el espacio que le toca */
   flex: 1;
-  /* Espacio debajo de cada grupo para que no se amontonen */
   margin-bottom: 15px;
 }
 
-/* Estilo de las cajitas de entrada y selectores */
+/* Inputs con borde verde oliva como la imagen */
 .input-group input, .select-custom {
-  /* Que ocupen todo el ancho de su columna */
   width: 100%;
-  /* Espacio para escribir adentro */
   padding: 12px;
-  /* Un borde de 2 píxeles de color verde oliva */
   border: 2px solid #8ba37e; 
-  /* Puntas redondeadas para las cajitas */
   border-radius: 10px;
-  /* Tamaño de la letra que el usuario escribe */
   font-size: 1rem;
 }
 
-/* ==========================================
-   PASO 5: EL BOTÓN DE ENVIAR
-   ========================================== */
+/* El botón verde sólido */
 .btn-submit {
-  /* Que el botón sea del mismo ancho que el formulario */
   width: 100%;
-  /* Grosor o altura del botón */
   padding: 15px;
-  /* Color de fondo verde sólido */
   background-color: #6b8e5a;
-  /* Color de la letra (blanca) */
   color: white;
-  /* Quita el borde feo que traen los botones por defecto */
   border: none;
-  /* Redondea las esquinas del botón */
   border-radius: 8px;
-  /* Hace la letra más gruesa */
   font-weight: bold;
-  /* Tamaño de la letra del botón */
   font-size: 1.1rem;
-  /* Cambia el cursor a una manito al pasar por encima */
   cursor: pointer;
 }
 
-/* Cuando el usuario pone el mouse sobre el botón... */
 .btn-submit:hover {
-  /* El color verde se vuelve un poco más oscuro */
   background-color: #4a6341;
 }

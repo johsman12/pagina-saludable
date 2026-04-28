@@ -1,31 +1,31 @@
-.botones-container {
+.main-nav {
+  position: sticky;
+  top: 97px;
+  z-index: 19;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 15px; /* Espacio entre botones */
-  padding: 20px;
+  gap: 12px;
+  padding: 14px 24px 18px;
+  background: linear-gradient(180deg, rgba(241, 245, 232, 0.98), rgba(241, 245, 232, 0.85));
 }
 
-.btn-nav {
-  background-color: #a3c16a; /* El verde saludable de Nutrik */
-  color: white;
+.nav-button {
   border: none;
-  padding: 10px 25px;
-  border-radius: 12px; /* Bordes bien redondeados */
-  font-size: 16px;
-  font-weight: 600;
+  border-radius: 999px;
+  padding: 12px 22px;
+  background: #fff;
+  color: var(--verde-oscuro);
+  font-size: 0.95rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+  box-shadow: 0 10px 18px rgba(27, 48, 11, 0.08);
 }
 
-/* Efecto al pasar el mouse */
-.btn-nav:hover {
-  background-color: #8da85a;
-  transform: translateY(-3px); /* Pequeño salto hacia arriba */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Efecto al hacer clic */
-.btn-nav:active {
-  transform: translateY(0);
+.nav-button:hover {
+  background: var(--verde-nutrik);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(145, 193, 62, 0.22);
 }

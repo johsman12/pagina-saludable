@@ -1,6 +1,4 @@
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import Header from "./componentes/Header";
 import Botones from "./componentes/Botones";
 import Home from "./componentes/Home";

@@ -19,7 +19,7 @@ function Productos() {
             Una deliciosa mezcla de vegetales frescos con proteínas naturales,
             perfecta para mantener una alimentación balanceada.
           </p>
-
+          
         </div>
 
         <div className="producto">

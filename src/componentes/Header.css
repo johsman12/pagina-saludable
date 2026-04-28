@@ -83,6 +83,18 @@ nav button:hover{
   color:#555;
   margin-bottom:10px;
 }
+.botones-produc{
+  width: 100%;
+  background: #8cff00;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
 
 footer{
   margin-top:40px;

@@ -1,3 +1,4 @@
+import "./Productos"
 function Productos() {
   return (
     <div className="contenedor">
@@ -12,6 +13,8 @@ function Productos() {
             Una deliciosa mezcla de vegetales frescos con proteínas naturales,
             perfecta para mantener una alimentación balanceada.
           </p>
+          <p>$ 10.000</p>
+          <button className="botones-produc">Ver mas</button>
         </div>
 
         <div className="producto">
@@ -21,8 +24,8 @@ function Productos() {
             Selección de frutas naturales ricas en vitaminas y antioxidantes
             ideales para energizar tu día.
           </p>
-         <p>$ 28.000</p>
-        <button className="botonesproductos">Ver mas</button>
+         <p>$ 15.000</p>
+         <button className="botones-produc">Ver mas</button>
         </div>
 
         <div className="producto">
@@ -32,6 +35,8 @@ function Productos() {
             Bebida refrescante que ayuda a limpiar tu organismo y mejorar tu
             digestión de forma natural.
           </p>
+          <p>$ 13.599,99</p>
+          <button className="botones-produc">Ver mas</button>
         </div>
 
       </div>

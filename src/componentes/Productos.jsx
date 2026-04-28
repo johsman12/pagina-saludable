@@ -1,3 +1,4 @@
+import "./Header.css"
 function Productos() {
   return (
     <div className="contenedor">
@@ -19,7 +20,8 @@ function Productos() {
             Una deliciosa mezcla de vegetales frescos con proteínas naturales,
             perfecta para mantener una alimentación balanceada.
           </p>
-          
+          <p>$ 10.000</p>
+          <button className="botones-produc">comprar</button>
         </div>
 
         <div className="producto">
@@ -32,7 +34,8 @@ function Productos() {
             Selección de frutas naturales ricas en vitaminas y antioxidantes
             ideales para energizar tu día.
           </p>
-
+          <p>$ 15.000</p>
+          <button className="botones-produc">comprar</button>
         </div>
 
         <div className="producto">
@@ -40,12 +43,12 @@ function Productos() {
           <h3>Jugo Detox</h3>
 
           <p>Refrescante y saludable para tu cuerpo.</p>
-
           <p>
             Bebida refrescante que ayuda a limpiar tu organismo y mejorar tu
             digestión de forma natural.
           </p>
-
+          <p>$ 13.599,99</p>
+          <button className="botones-produc">comprar</button>
         </div>
 
       </div>

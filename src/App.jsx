@@ -1,19 +1,22 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './componentes/Navbar';
 import Home from './componentes/Home';
 import Login from './componentes/Login';
-import Botones from './componentes/Botones'; // Importas tu barra de navegación
+import Registro from './componentes/Registro';
 
 function App() {
   return (
     <Router>
-      {/* Si quieres que los botones aparezcan en TODAS las páginas, ponlos fuera de Routes */}
-      <Botones /> 
-      
+      <Navbar /> 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        {/* Aquí irías agregando las demás: comprar, registro, contacto */}
+        <Route path="/registro" element={<Registro />} />
       </Routes>
+      {/* Ya no ponemos el Footer aquí */}
     </Router>
   );
 }
+
+export default App;
+

@@ -1,4 +1,5 @@
 import "./Home.css";
+import Footer from "./Footer"; // 1. Importación agregada
 
 function Home() {
   return (
@@ -6,8 +7,6 @@ function Home() {
       {/* HERO */}
       <section className="hero">
         <div className="hero-texto">
-        
-
           <h1>
             Alimentación saludable <br />
             <span>sin esfuerzo</span>
@@ -66,6 +65,9 @@ function Home() {
         <p>Tu cuerpo te lo va a agradecer.</p>
         <button className="btn-primary">Comenzar ahora</button>
       </section>
+
+      {/* 2. El Footer solo aparecerá en esta página */}
+      <Footer />
     </>
   );
 }

@@ -5,6 +5,10 @@ const enlaces = [
   { etiqueta: "Productos", destino: "productos" },
   { etiqueta: "Iniciar sesión", destino: "login" },
   { etiqueta: "Registro", destino: "registro" },
+<<<<<<< HEAD
+=======
+  {etiqueta: "Carrito" , destino: "Carrito"}
+>>>>>>> origin/dev-carlos
 ];
 
 function Botones() {

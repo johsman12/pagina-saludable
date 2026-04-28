@@ -1,0 +1,40 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: 16px 24px;
+  background: rgba(241, 245, 232, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(184, 179, 161, 0.35);
+}
+
+.brand-lockup {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.brand-logo {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--fondo-crema);
+  box-shadow: 0 10px 25px rgba(27, 48, 11, 0.12);
+}
+
+.brand-lockup h1 {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--verde-oscuro);
+}
+
+.brand-lockup p {
+  margin: 4px 0 0;
+  color: var(--gris-carbon);
+  font-weight: 500;
+}

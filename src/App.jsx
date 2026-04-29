@@ -2,6 +2,9 @@ import { useState } from "react";
 import heroImage from "./assets/comida.jpg";
 import "./App.css";
 
+const FORMSUBMIT_ENDPOINT =
+  "https://formsubmit.co/ajax/davidalexanderchangosantacruz@gmail.com";
+
 const initialForm = {
   nombre: "",
   correo: "",
@@ -9,11 +12,16 @@ const initialForm = {
   tipo: "Queja",
   asunto: "",
   mensaje: "",
+  website: "",
 };
 
 function App() {
   const [formData, setFormData] = useState(initialForm);
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState({
+    type: "",
+    message: "",
+  });
+  const [isSending, setIsSending] = useState(false);
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
@@ -23,31 +31,60 @@ function App() {
     }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const subject = encodeURIComponent(
-      `${formData.tipo}: ${formData.asunto || "Nuevo mensaje desde la app"}`
-    );
+    if (formData.website) {
+      return;
+    }
 
-    const body = encodeURIComponent(
-      [
-        `Tipo de mensaje: ${formData.tipo}`,
-        `Nombre: ${formData.nombre}`,
-        `Correo: ${formData.correo}`,
-        `Telefono: ${formData.telefono || "No proporcionado"}`,
-        "",
-        "Mensaje:",
-        formData.mensaje,
-      ].join("\n")
-    );
+    setIsSending(true);
+    setStatus({
+      type: "",
+      message: "",
+    });
 
-    window.location.href = `mailto:davidalexanderchangosantacruz@gmail.com?subject=${subject}&body=${body}`;
+    try {
+      const response = await fetch(FORMSUBMIT_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `${formData.tipo}: ${formData.asunto}`,
+          _template: "table",
+          _replyto: formData.correo,
+          nombre: formData.nombre,
+          correo: formData.correo,
+          telefono: formData.telefono || "No proporcionado",
+          tipo: formData.tipo,
+          asunto: formData.asunto,
+          mensaje: formData.mensaje,
+        }),
+      });
 
-    setStatus(
-      "Abrimos tu correo para completar el envio. Si no se abre automaticamente, revisa que tengas una app de correo configurada."
-    );
-    setFormData(initialForm);
+      const data = await response.json();
+
+      if (!response.ok || data.success === false) {
+        throw new Error(data.message || "No se pudo enviar el formulario.");
+      }
+
+      setStatus({
+        type: "success",
+        message:
+          "Tu mensaje fue enviado correctamente. Revisa tambien el correo de destino para confirmar la activacion del formulario la primera vez.",
+      });
+      setFormData(initialForm);
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message:
+          "No pudimos enviar tu mensaje en este momento. Intenta de nuevo en unos segundos.",
+      });
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -58,8 +95,8 @@ function App() {
           <h1>Quejas, reclamos, sugerencias y recomendaciones</h1>
           <p>
             Comparte tu experiencia de forma clara y directa. Este formulario
-            organiza tu mensaje y lo prepara para enviarlo al correo de
-            atencion.
+            ahora envia el mensaje directamente al correo de atencion, sin abrir
+            aplicaciones externas.
           </p>
           <a className="support-header__cta" href="#formulario-contacto">
             Enviar mensaje
@@ -99,8 +136,9 @@ function App() {
               davidalexanderchangosantacruz@gmail.com
             </p>
             <p>
-              El formulario genera automaticamente el asunto y el cuerpo del
-              mensaje para que lo envies mas rapido.
+              El envio es directo desde la pagina. La primera vez debes
+              confirmar la activacion del formulario desde el correo que envia
+              FormSubmit.
             </p>
           </article>
         </section>
@@ -132,6 +170,16 @@ function App() {
           </div>
 
           <form className="support-form" onSubmit={handleSubmit}>
+            <input
+              className="support-form__hidden"
+              type="text"
+              name="website"
+              value={formData.website}
+              onChange={handleChange}
+              tabIndex="-1"
+              autoComplete="off"
+            />
+
             <label>
               Nombre completo
               <input
@@ -209,9 +257,15 @@ function App() {
               />
             </label>
 
-            <button type="submit">Preparar correo</button>
+            <button type="submit" disabled={isSending}>
+              {isSending ? "Enviando..." : "Enviar mensaje"}
+            </button>
 
-            {status ? <p className="support-form__status">{status}</p> : null}
+            {status.message ? (
+              <p className={`support-form__status support-form__status--${status.type}`}>
+                {status.message}
+              </p>
+            ) : null}
           </form>
         </section>
       </main>

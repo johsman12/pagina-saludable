@@ -7,7 +7,6 @@ function Home() {
       <section className="hero">
         <div className="hero-texto">
         
-
           <h1>
             Alimentación saludable <br />
             <span>sin esfuerzo</span>
@@ -38,7 +37,7 @@ function Home() {
         </div>
       </section>
 
-      {/* BENEFICIOS */}
+      {/* estos son los BENEFICIOS */}
       <section className="beneficios">
         <h2>¿Por qué elegirnos?</h2>
 
@@ -64,7 +63,12 @@ function Home() {
       <section className="cta">
         <h2>Empieza hoy tu cambio</h2>
         <p>Tu cuerpo te lo va a agradecer.</p>
-        <button className="btn-primary">Comenzar ahora</button>
+
+        
+        <button className="btn-primary btn-grande">
+          Comenzar ahora
+        </button>
+
       </section>
     </>
   );

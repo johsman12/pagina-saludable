@@ -56,8 +56,11 @@
   font-weight: bold;
 }
 
+/* 🔥 HOVER CORREGIDO (NO DESAPARECE) */
 .btn-primary:hover {
   transform: scale(1.05);
+  background: white;
+  color: var(--verde-oscuro);
 }
 
 .btn-outline {
@@ -69,6 +72,13 @@
 .btn-outline:hover {
   background: white;
   color: var(--verde-oscuro);
+}
+
+/* 🔥 BOTÓN MÁS GRANDE (SOLO CTA FINAL) */
+.btn-grande {
+  padding: 20px 40px;
+  font-size: 22px;
+  border-radius: 12px;
 }
 
 /* IMAGEN */

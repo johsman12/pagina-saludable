@@ -1,7 +1,6 @@
 import React from 'react';
 import './Footer.css';
 
-// Importaciones con tus nombres exactos y extensiones .jpeg
 import logoNutrik from '../assets/Nutrik.jpg'; 
 import imgTiktok from '../assets/tiktok.jpeg';
 import imgInstagram from '../assets/instagram.jpeg';
@@ -12,24 +11,23 @@ function Footer() {
   return (
     <footer className="main-footer">
       <div className="footer-container">
-        {/* Logo Nutrik */}
+        
+        
         <div className="footer-section logo-section">
           <img src={logoNutrik} alt="Nutrik Logo" className="footer-logo-img" />
           <p className="tagline">TU SALUD EMPIEZA AQUÍ</p>
         </div>
 
-        {/* Información */}
+        
         <div className="footer-section">
           <h3>Información</h3>
           <ul>
             <li><a href="#">Acerca de Nosotros</a></li>
             <li><a href="#">Contactanos</a></li>
-            <li><a href="#">Iniciar Sesion</a></li>
-            <li><a href="#">Registrarse</a></li>
           </ul>
         </div>
 
-        {/* Ayuda */}
+        
         <div className="footer-section">
           <h3>Nesecitas ayuda</h3>
           <ul>
@@ -39,13 +37,14 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Legal y Redes */}
+        
         <div className="footer-section">
           <h3>Legal</h3>
           <ul>
             <li><a href="#">Terminos y condiciones</a></li>
             <li><a href="#">Tratamiento de datos</a></li>
           </ul>
+
           <div className="footer-socials">
             <img src={imgTiktok} alt="TikTok" className="social-icon-img" />
             <img src={imgInstagram} alt="Instagram" className="social-icon-img" />
